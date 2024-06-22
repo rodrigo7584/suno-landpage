@@ -13,6 +13,7 @@ tables.forEach(table => {
             btns.classList.remove('active')
           })
           price.innerText = price.dataset.price
+          speed.innerText = speed.dataset.speed
         } else {
           switches.forEach(btns => {
             btns.classList.remove('active')
@@ -20,6 +21,7 @@ tables.forEach(table => {
           btn.classList.add('active')
           console.log('nao esta ativo', box)
           price.innerText = btn.dataset.price
+          speed.innerText = btn.dataset.speed
         }
       })
     })
