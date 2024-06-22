@@ -1,0 +1,7 @@
+.header {
+  background: var(--purple);
+  padding: 1rem 0;
+}
+.header .logo {
+  height: 3.5rem;
+}
