@@ -11,6 +11,7 @@ tables.forEach(table => {
         if (btn.classList.contains('active')) {
           switches.forEach(btns => {
             btns.classList.remove('active')
+            btns.closest('.adicional-box').classList.remove('active')
           })
 
           price.innerText = price.dataset.price
@@ -18,8 +19,10 @@ tables.forEach(table => {
         } else {
           switches.forEach(btns => {
             btns.classList.remove('active')
+            btns.closest('.adicional-box').classList.remove('active')
           })
           btn.classList.add('active')
+          btn.closest('.adicional-box').classList.add('active')
 
           price.innerText = btn.dataset.price
           speed.innerText = btn.dataset.speed
@@ -35,28 +38,18 @@ function sendData(table) {
 
   const speed = chosenTable.querySelector('.speed').innerText
   const price = chosenTable.querySelector('.price').innerText
-  let time = chosenTable.querySelector('.time')
-  const btn = chosenTable.querySelector('.btn-switch.active')
-  let adicional = ''
-  if (btn) {
-    adicional = btn
-      .closest('.adicional-box')
-      .querySelector('.description').innerText
-  }
-  if (time) {
-    time = time.innerText
-  }
-
-  console.log(
-    `velocidade:${speed}|preço:${price}|tempo:${time}|tem adicional:${adicional}`
-  )
-
-  // const data = {
-  //   speed: speed
+  const time = chosenTable.querySelector('.time').innerText
+  const adicionalBox = chosenTable.querySelector('.adicional-box.active')
+  // if(adicionalBox){
+  //   const adicional = adicionalBox.
   // }
 
-  // const queryString = new URLSearchParams(data).toString()
-  // window.location.href = 'compra.html?' + queryString
+  const data = {
+    speed: speed
+  }
+
+  const queryString = new URLSearchParams(data).toString()
+  window.location.href = 'compra.html?' + queryString
 }
 
 // Função para obter parâmetros da query string
