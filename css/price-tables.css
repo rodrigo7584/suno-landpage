@@ -1,6 +1,7 @@
 .price-tables .tables {
   display: flex;
   gap: 3rem;
+  padding: 5rem 0;
 }
 .price-tables .table {
   color: var(--white);
@@ -37,6 +38,7 @@
   margin-top: 2rem;
 }
 .price-tables .btn {
+  color: var(--purple);
   display: inline-flex;
   gap: 0.5rem;
   align-items: center;
@@ -45,6 +47,9 @@
   font-weight: 600;
   padding: 1rem;
   border-radius: 1rem;
+}
+.price-tables .btn:hover {
+  cursor: pointer;
 }
 .price-tables .btn img {
   width: 2rem;
@@ -77,6 +82,26 @@
   height: 5rem;
   gap: 0.5rem;
   align-items: center;
+  position: relative;
+}
+.price-tables .adicional-box .detail {
+  position: absolute;
+  width: 37px;
+  height: 68px;
+  left: -41px;
+  top: 0;
+}
+.price-tables .adicional-box::before {
+  content: '';
+  position: absolute;
+  display: flex;
+  width: 46px;
+  height: 68px;
+  left: -45px;
+  top: 0;
+  background: url('../img/detail.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 .price-tables .adicional-box .btn-switch {
   background: var(--gray-dark);

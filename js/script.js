@@ -38,9 +38,7 @@ function sendData(table) {
   let time = chosenTable.querySelector('.time')
   let adicional = chosenTable.querySelector('.btn-switch.active')
   if (adicional) {
-    adicional = adicional
-      .closest('.adicional-box')
-      .querySelector('.description').innerText
+    adicional = adicional.closest('.adicional-box').querySelector('.description').innerText
   }
   if (time) {
     time = time.innerText
@@ -57,7 +55,7 @@ function sendData(table) {
     adicional: adicional
   }
   const queryString = new URLSearchParams(data).toString()
-  window.location.href = 'compra.html?' + queryString
+  window.location.href = 'compra.php?' + queryString
 }
 
 // Função para obter parâmetros da query string
@@ -108,7 +106,7 @@ function displayData() {
   }
 }
 // Verifica se está na Página 2 e exibe os dados
-if (window.location.pathname.endsWith('compra.html')) {
+if (window.location.pathname.endsWith('compra.php')) {
   window.onload = displayData
 }
 //form
@@ -125,10 +123,11 @@ function showStep(n) {
   }
   if (n == steps.length - 1) {
     document.getElementById('nextBtn').innerText = 'Enviar'
-    document.getElementById('nextBtn').setAttribute('type', 'submit')
+    document.getElementById('nextBtn').setAttribute('onclick', 'enviarEmail()')
   } else {
     document.getElementById('nextBtn').innerText = 'Continuar'
     document.getElementById('nextBtn').setAttribute('type', 'button')
+    document.getElementById('nextBtn').setAttribute('onclick', 'nextPrev(1)')
   }
 }
 
@@ -170,4 +169,9 @@ function setActivePayType(label) {
   const allLabels = document.querySelectorAll('.paytype-option')
   allLabels.forEach(lbl => lbl.classList.remove('active'))
   label.classList.add('active')
+}
+
+function enviarEmail() {
+  const form = document.getElementById('multiStepForm')
+  const formData = new FormData(form)
 }
