@@ -38,7 +38,9 @@ function sendData(table) {
   let time = chosenTable.querySelector('.time')
   let adicional = chosenTable.querySelector('.btn-switch.active')
   if (adicional) {
-    adicional = adicional.closest('.adicional-box').querySelector('.description').innerText
+    adicional = adicional
+      .closest('.adicional-box')
+      .querySelector('.description').innerText
   }
   if (time) {
     time = time.innerText
@@ -124,6 +126,7 @@ function showStep(n) {
   if (n == steps.length - 1) {
     document.getElementById('nextBtn').innerText = 'Enviar'
     document.getElementById('nextBtn').setAttribute('onclick', 'enviarEmail()')
+    showData()
   } else {
     document.getElementById('nextBtn').innerText = 'Continuar'
     document.getElementById('nextBtn').setAttribute('type', 'button')
@@ -161,17 +164,46 @@ function validateForm() {
 }
 
 function setActivePayday(label) {
-  const allLabels = document.querySelectorAll('.payday-option')
+  const allLabels = document.querySelectorAll('.vencimento-opcao')
   allLabels.forEach(lbl => lbl.classList.remove('active'))
   label.classList.add('active')
 }
 function setActivePayType(label) {
-  const allLabels = document.querySelectorAll('.paytype-option')
+  const allLabels = document.querySelectorAll('.tipo-pagamento-opcao')
   allLabels.forEach(lbl => lbl.classList.remove('active'))
   label.classList.add('active')
 }
 
-function enviarEmail() {
+function showData() {
   const form = document.getElementById('multiStepForm')
   const formData = new FormData(form)
+
+  const fieldMappings = [
+    { name: 'velocidade', displayName: 'Velocidade:' },
+    { name: 'endereco', displayName: 'Endereço:' },
+    { name: 'bairro', displayName: 'Bairro:' },
+    { name: 'cidade', displayName: 'Cidade:' },
+    { name: 'numero', displayName: 'Número:' },
+    { name: 'complemento', displayName: 'Complemento:' },
+    { name: 'nome', displayName: 'Nome Completo:' },
+    { name: 'telefone', displayName: 'Telefone:' },
+    { name: 'email', displayName: 'E-mail:' },
+    { name: 'data-nascimento', displayName: 'Data de Nascimento' },
+    { name: 'nome-mae', displayName: 'Nome da mãe:' },
+    { name: 'cpf-cnpj', displayName: 'CPF ou CNPJ:' },
+    { name: 'vencimento', displayName: 'Dia do vencimento:' },
+    { name: 'tipo-pagamento', displayName: 'Forma de Pagamento:' }
+  ]
+
+  const output = document.getElementById('output')
+  output.innerHTML = '' // Limpa qualquer conteúdo anterior
+
+  for (const [name, value] of formData.entries()) {
+    const field = fieldMappings.find(field => field.name === name)
+    if (field) {
+      const listItem = document.createElement('li')
+      listItem.textContent = `${field.displayName} ${value}`
+      output.appendChild(listItem)
+    }
+  }
 }

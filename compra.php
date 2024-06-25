@@ -64,7 +64,7 @@
                 <input type="text" id="telefone" name="telefone" required />
                 <label for="email">E-mail:</label>
                 <input type="text" id="email" name="email" required />
-                <label for="nascimento">Data de Nascimento:</label>
+                <label for="data-nascimento">Data de Nascimento:</label>
                 <input type="text" id="nascimento" name="nascimento" required />
                 <label for="nome-mae">Nome da mãe:</label>
                 <input type="text" id="nome-mae" name="nome-mae" required />
@@ -76,36 +76,36 @@
             <div class="step">
               <h2>Como prefere fazer o pagamento?</h2>
               <p class="label">Dia do Vencimento:</p>
-              <div class="payment-options">
-                <label for="payday-01" class="payday-option active" onclick="setActivePayday(this)">
-                  <input type="radio" id="payday-01" name="payday" value="01" checked required />
+              <div class="vencimento-opcoes">
+                <label for="vencimento-01" class="vencimento-opcao active" onclick="setActivePayday(this)">
+                  <input type="radio" id="vencimento-01" name="vencimento" value="01" checked required />
                   01
                 </label>
-                <label for="payday-07" class="payday-option" onclick="setActivePayday(this)">
-                  <input type="radio" id="payday-07" name="payday" value="07" required />
+                <label for="vencimento-07" class="vencimento-opcao" onclick="setActivePayday(this)">
+                  <input type="radio" id="vencimento-07" name="vencimento" value="07" required />
                   07
                 </label>
-                <label for="payday-10" class="payday-option" onclick="setActivePayday(this)">
-                  <input type="radio" id="payday-10" name="payday" value="10" required />
+                <label for="vencimento-10" class="vencimento-opcao" onclick="setActivePayday(this)">
+                  <input type="radio" id="vencimento-10" name="vencimento" value="10" required />
                   10
                 </label>
-                <label for="payday-12" class="payday-option" onclick="setActivePayday(this)">
-                  <input type="radio" id="payday-12" name="payday" value="12" required />
+                <label for="vencimento-12" class="vencimento-opcao" onclick="setActivePayday(this)">
+                  <input type="radio" id="vencimento-12" name="vencimento" value="12" required />
                   12
                 </label>
-                <label for="payday-15" class="payday-option" onclick="setActivePayday(this)">
-                  <input type="radio" id="payday-15" name="payday" value="15" required />
+                <label for="vencimento-15" class="vencimento-opcao" onclick="setActivePayday(this)">
+                  <input type="radio" id="vencimento-15" name="vencimento" value="15" required />
                   15
                 </label>
               </div>
               <p class="label">Forma de Pagamento:</p>
-              <div class="paytype-options">
-                <label for="paytype-boleto" class="paytype-option active" onclick="setActivePayType(this)">
-                  <input type="radio" id="paytype-boleto" name="paytype" value="boleto" required />
+              <div class="tipo-pagamento-opcoes">
+                <label for="tipo-pagamento-boleto" class="tipo-pagamento-opcao active" onclick="setActivePayType(this)">
+                  <input type="radio" id="tipo-pagamento-boleto" name="tipo-pagamento" value="boleto" required />
                   Boleto
                 </label>
-                <label for="paytype-cartaodebito" class="paytype-option" onclick="setActivePayType(this)">
-                  <input type="radio" id="paytype-cartaodebito" name="paytype" value="cartaodebito" required />
+                <label for="tipo-pagamento-cartaodebito" class="tipo-pagamento-opcao" onclick="setActivePayType(this)">
+                  <input type="radio" id="tipo-pagamento-cartaodebito" name="tipo-pagamento" value="cartaodebito" required />
                   Cartão Débito
                 </label>
               </div>
@@ -114,6 +114,7 @@
 
             <div class="step">
               <h2>Confirme seu Dados:</h2>
+              <ul id="output"></ul>
             </div>
             <span class="label-message"></span>
             <div class="btns">

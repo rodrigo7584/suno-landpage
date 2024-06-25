@@ -1,0 +1,144 @@
+
+.compra .row {
+  padding: 5rem 0;
+  display: grid;
+  grid-template-columns: 30rem 60rem;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.compra .plan-details .chosen {
+  color: var(--gray-dark);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.compra .plan-details .speed {
+  color: var(--black);
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.compra .plan-details .adicional {
+  color: var(--gray-dark);
+  font-size: 1.2rem;
+}
+.compra .plan-steps ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.compra .plan-steps ul li {
+  font-size: 1.5rem;
+  color: var(--black);
+  font-weight: 400;
+}
+.compra .plan-steps ul li.active {
+  font-weight: 700;
+}
+.compra .price-details .title,
+.compra .plan-steps .title {
+  color: var(--gray-dark);
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.compra .container-price {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+.compra .container-price .icon {
+  width: 100%;
+  filter: var(--purple-svg);
+}
+.compra .box-price {
+  margin-bottom: 0.3rem;
+}
+.compra .box-price .price {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.compra .box-price .month {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.compra .price-time .time {
+  color: var(--gray-dark);
+  font-size: 1.2rem;
+}
+.compra .form .step {
+  display: none;
+}
+.compra .form .step.active {
+  display: block;
+}
+.compra .form .invalid {
+  border-color: red;
+}
+.compra .form h2 {
+  font-size: 3rem;
+  color: var(--black);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.compra .form .box-steps {
+  display: flex;
+  flex-direction: column;
+}
+.compra .form label,
+.compra .form .label {
+  font-size: 1.5rem;
+  color: var(--black);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.compra .form input {
+  border-radius: 0.8rem;
+  border: 0.2rem solid var(--black);
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  width: 30rem;
+}
+.compra .vencimento-opcoes,
+.compra .tipo-pagamento-opcoes {
+  display: flex;
+  margin-bottom: 2rem;
+
+  gap: 0.5rem;
+}
+.compra .vencimento-opcoes input,
+.compra .tipo-pagamento-opcoes input {
+  display: none;
+}
+.compra .vencimento-opcoes .vencimento-opcao,
+.compra .tipo-pagamento-opcoes .tipo-pagamento-opcao {
+  padding: 2rem;
+  border: 0.1px solid var(--gray-dark);
+  border-radius: 0.5rem;
+}
+.compra .vencimento-opcoes .vencimento-opcao.active,
+.compra .tipo-pagamento-opcoes .tipo-pagamento-opcao.active {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.compra .vencimento-opcoes .vencimento-opcao:hover,
+.compra .tipo-pagamento-opcoes .tipo-pagamento-opcao:hover {
+  cursor: pointer;
+}
+.compra .btns {
+  display: flex;
+  gap: 2rem;
+}
+.compra .btns button {
+  color: var(--white);
+  background-color: var(--blue);
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
+}
+.compra .btns button:hover {
+  cursor: pointer;
+}
