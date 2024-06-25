@@ -5,3 +5,31 @@
 .header .logo {
   height: 3.5rem;
 }
+.btns-floating {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 50;
+}
+.btns-floating .btn {
+  border: 1px solid var(--purple);
+  border-radius: 100%;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btns-floating .btn img {
+  height: 2.5rem;
+  filter: var(--white-svg);
+}
+.btns-floating .btn.btn-whatsapp {
+  background: #01a001;
+}
+.btns-floating .btn.btn-cellphone {
+  background: var(--blue-light);
+}

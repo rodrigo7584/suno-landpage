@@ -37,6 +37,7 @@
         <div class="campos">
           <form id="multiStepForm" class="form" method="POST">
             <input type="hidden" name="_subject" value="New submission!" />
+            <input type="hidden" name="preco" class="preco" value="" />
             <input type="hidden" name="velocidade" class="velocidade" value="" />
             <input type="hidden" name="_captcha" value="false" />
             <div class="step instalacao active">
@@ -105,18 +106,18 @@
                   Boleto
                 </label>
                 <label for="tipo-pagamento-cartaodebito" class="tipo-pagamento-opcao" onclick="setActivePayType(this)">
-                  <input type="radio" id="tipo-pagamento-cartaodebito" name="tipo-pagamento" value="cartaodebito" required />
+                  <input type="radio" id="tipo-pagamento-cartaodebito" name="tipo-pagamento" value="cartaodebito"
+                    required />
                   Cartão Débito
                 </label>
               </div>
             </div>
 
-
             <div class="step">
               <h2>Confirme seu Dados:</h2>
               <ul id="output"></ul>
             </div>
-            <span class="label-message"></span>
+            <span class="label-message"> </span>
             <div class="btns">
               <button type="button" class="btn-back" id="prevBtn" onclick="nextPrev(-1)">
                 Voltar

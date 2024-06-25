@@ -4,7 +4,7 @@ function enviarEmail() {
   const labelMessage = form.querySelector('.label-message')
 
   labelMessage.innerHTML = 'Enviando e-mail...'
-  labelMessage.style.color = '#0000ff'
+  labelMessage.style.color = '#3c7ec1'
 
   fetch('https://formsubmit.co/ajax/rodrigo.gandhi.oliveira@gmail.com', {
     method: 'POST',
@@ -20,6 +20,9 @@ function enviarEmail() {
         form.reset()
         labelMessage.innerHTML = 'E-mail enviado com sucesso'
         labelMessage.style.color = '#05b088'
+        setTimeout(() => {
+          window.location.href = 'index.php'
+        }, 5000)
       } else {
         labelMessage.innerHTML = 'Ocorreu um erro tente mais tarde'
         labelMessage.style.color = '#cf0000'

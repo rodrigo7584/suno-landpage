@@ -38,9 +38,7 @@ function sendData(table) {
   let time = chosenTable.querySelector('.time')
   let adicional = chosenTable.querySelector('.btn-switch.active')
   if (adicional) {
-    adicional = adicional
-      .closest('.adicional-box')
-      .querySelector('.description').innerText
+    adicional = adicional.closest('.adicional-box').querySelector('.description').innerText
   }
   if (time) {
     time = time.innerText
@@ -79,12 +77,18 @@ function displayData() {
   const adicional = document.querySelector('.menu .adicional')
   const time = document.querySelector('.menu .time')
   const velocidade = document.querySelector('.form .velocidade')
+  const preco = document.querySelector('.form .preco')
+
   if (velocidade) {
     velocidade.value = data.speed
   }
 
   if (speed) {
     speed.innerText = data.speed
+  }
+
+  if (preco) {
+    preco.value = data.price
   }
 
   if (price) {
@@ -117,20 +121,22 @@ showStep(currentStep)
 
 function showStep(n) {
   const steps = document.getElementsByClassName('step')
-  steps[n].classList.add('active')
-  if (n == 0) {
-    document.getElementById('prevBtn').style.display = 'none'
-  } else {
-    document.getElementById('prevBtn').style.display = 'inline'
-  }
-  if (n == steps.length - 1) {
-    document.getElementById('nextBtn').innerText = 'Enviar'
-    document.getElementById('nextBtn').setAttribute('onclick', 'enviarEmail()')
-    showData()
-  } else {
-    document.getElementById('nextBtn').innerText = 'Continuar'
-    document.getElementById('nextBtn').setAttribute('type', 'button')
-    document.getElementById('nextBtn').setAttribute('onclick', 'nextPrev(1)')
+  if (steps.length > 0) {
+    steps[n].classList.add('active')
+    if (n == 0) {
+      document.getElementById('prevBtn').style.display = 'none'
+    } else {
+      document.getElementById('prevBtn').style.display = 'inline'
+    }
+    if (n == steps.length - 1) {
+      document.getElementById('nextBtn').innerText = 'Enviar'
+      document.getElementById('nextBtn').setAttribute('onclick', 'enviarEmail()')
+      showData()
+    } else {
+      document.getElementById('nextBtn').innerText = 'Continuar'
+      document.getElementById('nextBtn').setAttribute('type', 'button')
+      document.getElementById('nextBtn').setAttribute('onclick', 'nextPrev(1)')
+    }
   }
 }
 
@@ -179,6 +185,7 @@ function showData() {
   const formData = new FormData(form)
 
   const fieldMappings = [
+    { name: 'preco', displayName: 'Preço:' },
     { name: 'velocidade', displayName: 'Velocidade:' },
     { name: 'endereco', displayName: 'Endereço:' },
     { name: 'bairro', displayName: 'Bairro:' },
@@ -202,8 +209,34 @@ function showData() {
     const field = fieldMappings.find(field => field.name === name)
     if (field) {
       const listItem = document.createElement('li')
-      listItem.textContent = `${field.displayName} ${value}`
+      listItem.innerHTML = `<span>${field.displayName}<span> ${value}`
       output.appendChild(listItem)
     }
   }
 }
+
+$(document).ready(function () {
+  $('#numero').inputmask({ mask: '9[9][9][9]', greedy: false })
+  $('#telefone').inputmask('(99)99999-9999')
+  $('#nascimento').inputmask('99/99/9999')
+  $('#cpf-cnpj').inputmask({ mask: ['999.999.999-99', '99.999.999-9999/99'], keepStatic: true })
+})
+
+var swiper = new Swiper('.tables', {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 40
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 50
+    }
+  }
+})

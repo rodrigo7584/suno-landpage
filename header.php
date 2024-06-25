@@ -9,11 +9,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/inputmask@5.0.9/dist/colormask.min.css" rel="stylesheet">
   <title>Suno Telecom</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
 <body>
+  <div class="btns-floating">
+    <a href="#" class="btn btn-whatsapp">
+      <img src="./img/icon-whatsapp.svg" alt="">
+    </a>
+    <a href="#" class="btn btn-cellphone">
+      <img src="./img/icon-cellphone.svg" alt="">
+    </a>
+  </div>
   <header class="header">
     <div class="container">
       <div class="row">

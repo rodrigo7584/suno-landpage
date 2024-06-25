@@ -15,6 +15,8 @@
   --purple: #312783;
   --blue: #3c7ec1;
   --blue-light: #009fe3;
+  --white-svg: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(6%) hue-rotate(231deg)
+    brightness(103%) contrast(100%);
   --purple-svg: brightness(0) saturate(100%) invert(15%) sepia(43%) saturate(3715%)
     hue-rotate(236deg) brightness(93%) contrast(99%);
   --blue-svg: brightness(0) saturate(100%) invert(51%) sepia(22%) saturate(1350%) hue-rotate(169deg)
@@ -47,7 +49,15 @@ body {
   height: 0.1rem;
   margin: 3rem 0.5rem;
 }
-
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* .hero .row {
   display: grid;
   grid-template-columns: 45% 1fr;
