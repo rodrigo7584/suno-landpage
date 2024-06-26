@@ -32,7 +32,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.9/dist/jquery.inputmask.min.js"></script>
-<script src="./js/script.js"></script>
+<script src="https://raw.githack.com/rodrigo7584/suno-landpage/master/js/script.js"></script>
 <script src="./js/email.js"></script>
 </body>
 
