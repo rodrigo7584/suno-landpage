@@ -1,3 +1,168 @@
-.hero .content img {
-  max-width: 100%;
+.hero .row {
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  align-items: center;
+  height: 40rem;
+}
+.hero .content {
+  height: 100%;
+  padding: 3rem 3rem 3rem 20%;
+  background: linear-gradient(to right, #000049, #000080);
+}
+.hero .content .logo {
+  height: 4rem;
+  margin-bottom: 2rem;
+  align-self: flex-start;
+}
+.hero .content {
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+.hero .content h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.hero .content h1 strong {
+  font-size: 5rem;
+  font-weight: 700;
+}
+.hero .content .hero-price-container {
+  margin: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+}
+.hero .content h2 {
+  font-weight: 900;
+  font-size: 3.5rem;
+  text-align: center;
+}
+.hero .content .hero-price {
+  position: relative;
+}
+.hero .content .hero-price::before {
+  content: '';
+  position: absolute;
+  height: calc(100% + 1rem);
+  width: 0.1rem;
+  background-color: var(--white);
+  left: -4rem;
+  top: 0;
+}
+.hero .content .hero-price h3 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.hero .content .hero-price h4 {
+  font-size: 7rem;
+  font-weight: 700;
+  display: flex;
+}
+.hero .content .hero-price h4 span {
+  font-size: 3rem;
+  font-weight: 500;
+}
+.hero .content .hero-price h4 span:first-of-type {
+  align-self: flex-end;
+}
+.hero .content .btn-compre {
+  background-color: var(--white);
+  display: flex;
+  align-self: flex-end;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--purple);
+  padding: 1.5rem 4rem;
+  border-radius: 0.5rem;
+}
+.hero .image {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  height: 100%;
+}
+.hero .image::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to right, #000080 0%, #0000801c 60%);
+}
+.hero .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 992px) {
+  .hero .row {
+    display: grid;
+    grid-template-columns: 55% 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .hero .row {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .hero .content .logo {
+    align-self: center;
+  }
+  .hero .content h1 {
+    text-align: center;
+  }
+  .hero .row .content {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, #000049, #000080);
+  }
+  .hero .content .btn-compre {
+    align-self: center;
+  }
+  .hero .image {
+    height: 40rem;
+  }
+  .hero .image::after {
+    background: linear-gradient(to bottom, #000080 0%, #0000801c 60%);
+  }
+}
+@media (max-width: 576px) {
+  .hero .content h1 {
+    font-size: 2rem;
+  }
+  .hero .content h1 strong {
+    font-size: 3.5rem;
+  }
+  .hero .content .hero-price-container {
+    gap: 5rem;
+  }
+  .hero .content .hero-price::before {
+    left: -2.5rem;
+  }
+  .hero .content h2 {
+    font-size: 2.5rem;
+  }
+  .hero .content .hero-price h3 {
+    font-size: 1rem;
+  }
+
+  .hero .content .hero-price h4 span {
+    font-size: 2rem;
+  }
+  .hero .content .hero-price h4 {
+    font-size: 5rem;
+  }
+  .hero .content .btn-compre {
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem;
+  }
+  .hero .image {
+    height: 25rem;
+  }
 }

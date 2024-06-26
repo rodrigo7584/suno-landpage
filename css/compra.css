@@ -159,3 +159,70 @@
 .compra .btns button:hover {
   cursor: pointer;
 }
+@media (max-width: 992px) {
+  .compra .row {
+    grid-template-columns: 30rem 30rem;
+  }
+}
+@media (max-width: 768px) {
+  .compra .row {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 576px) {
+  .compra .row {
+    padding: 2rem 0;
+  }
+  .compra .menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .compra .division {
+    display: none;
+  }
+  .compra .plan-details .chosen {
+    color: var(--gray-dark);
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .compra .plan-details .speed {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .compra .price-details .title,
+  .compra .plan-steps .title {
+    text-align: center;
+  }
+  .compra .container-price {
+    display: flex;
+    justify-content: center;
+  }
+  .compra .container-price .icon {
+    display: none;
+  }
+  .compra .box-price .price {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .compra .plan-steps {
+    grid-column: 1/3;
+  }
+  .compra .plan-steps li {
+    text-align: center;
+  }
+  .compra .form h2 {
+    font-size: 2rem;
+  }
+  .compra .form input {
+    padding: 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .compra .btns button {
+    font-size: 1.6rem;
+  }
+}

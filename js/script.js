@@ -219,16 +219,19 @@ $(document).ready(function () {
   $('#numero').inputmask({ mask: '9[9][9][9]', greedy: false })
   $('#telefone').inputmask('(99)99999-9999')
   $('#nascimento').inputmask('99/99/9999')
-  $('#cpf-cnpj').inputmask({ mask: ['999.999.999-99', '99.999.999-9999/99'], keepStatic: true })
+  $('#cpf-cnpj').inputmask({
+    mask: ['999.999.999-99', '99.999.999-9999/99'],
+    keepStatic: true
+  })
 })
 
 var swiper = new Swiper('.tables', {
   slidesPerView: 1,
-  spaceBetween: 10,
+  spaceBetween: 40,
   breakpoints: {
     640: {
       slidesPerView: 2,
-      spaceBetween: 20
+      spaceBetween: 40
     },
     992: {
       slidesPerView: 3,

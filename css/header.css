@@ -15,7 +15,7 @@
   z-index: 50;
 }
 .btns-floating .btn {
-  border: 1px solid var(--purple);
+  border: 1px solid var(--black);
   border-radius: 100%;
   width: 5rem;
   height: 5rem;
@@ -31,5 +31,5 @@
   background: #01a001;
 }
 .btns-floating .btn.btn-cellphone {
-  background: var(--blue-light);
+  background: var(--purple);
 }

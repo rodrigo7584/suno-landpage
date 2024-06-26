@@ -1,6 +1,4 @@
 .price-tables .tables {
-  display: flex;
-  gap: 3rem;
   padding: 5rem 0;
 }
 .price-tables .table {
@@ -84,18 +82,12 @@
   align-items: center;
   position: relative;
 }
-.price-tables .adicional-box .detail {
-  position: absolute;
-  width: 37px;
-  height: 68px;
-  left: -41px;
-  top: 0;
-}
+
 .price-tables .adicional-box::before {
   content: '';
   position: absolute;
   display: flex;
-  width: 46px;
+  width: 47px;
   height: 68px;
   left: -45px;
   top: 0;
@@ -119,7 +111,7 @@
 .price-tables .adicional-box .btn-switch .ball {
   width: 1rem;
   height: 1rem;
-  background-color: var(--white);
+  background-color: var(--gray);
   border-radius: 100%;
   margin-left: 0;
   transition: 0.5s ease-in-out;
@@ -127,10 +119,17 @@
 .price-tables .adicional-box .btn-switch.active .ball {
   cursor: pointer;
   margin-left: calc(100% - 1rem);
+  background-color: var(--white);
 }
 .price-tables .text {
   font-size: 1.3rem;
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 0.5rem;
+}
+@media (max-width: 400px) {
+  .price-tables .table {
+    color: var(--white);
+    width: 26rem;
+  }
 }

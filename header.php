@@ -17,10 +17,13 @@
 
 <body>
   <div class="btns-floating">
-    <a href="#" class="btn btn-whatsapp">
+    <a href="https://api.whatsapp.com/send?phone=558007655520&text=Oi,%20vim%20pelo%20site%20da%20Suno" 
+    target="_blank"
+    class="btn btn-whatsapp"
+      >
       <img src="./img/icon-whatsapp.svg" alt="">
     </a>
-    <a href="#" class="btn btn-cellphone">
+    <a href="tel:8007655520"  target="_blank" class="btn btn-cellphone">
       <img src="./img/icon-cellphone.svg" alt="">
     </a>
   </div>
