@@ -43,12 +43,16 @@
             <div class="step instalacao active">
               <h2>Onde será feita a instalação?</h2>
               <div class="box-steps">
-                <input type="text" id="cep">
-                <button onclick="buscarEndereco()" class="btn btn-buscar">Buscar</button>
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required />
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required />
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required />
+                <label for="numero">Número:</label>
+                <input type="text" id="numero" name="numero" required />
                 <label for="complemento">Complemento:</label>
                 <input type="text" id="complemento" name="complemento" />
-                <ul class='resultadoBuscaCep'></ul>
-
               </div>
             </div>
 
@@ -107,7 +111,8 @@
                   Cartão Crédito
                 </label>
                 <label for="tipo-pagamento-pix" class="tipo-pagamento-opcao" onclick="setActivePayType(this)">
-                  <input type="radio" id="tipo-pagamento-pix" name="tipo-pagamento" value="pix" required />
+                  <input type="radio" id="tipo-pagamento-pix" name="tipo-pagamento" value="pix"
+                    required />
                   PIX
                 </label>
               </div>

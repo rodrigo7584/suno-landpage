@@ -219,6 +219,7 @@ $(document).ready(function () {
   $('#numero').inputmask({ mask: '9[9][9][9]', greedy: false })
   $('#telefone').inputmask('(99)99999-9999')
   $('#nascimento').inputmask('99/99/9999')
+  $('#cep').inputmask('99999-999')
   $('#cpf-cnpj').inputmask({
     mask: ['999.999.999-99', '99.999.999-9999/99'],
     keepStatic: true
@@ -244,3 +245,27 @@ var swiper = new Swiper('.tables', {
     }
   }
 })
+
+function buscarEndereco() {
+  const cep = document.getElementById('cep').value.replace(/\D/g, '')
+  const url = `https://viacep.com.br/ws/${cep}/json/`
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      if (data.erro) {
+        document.getElementById('resultado').innerHTML = 'CEP não encontrado.'
+      } else {
+        document.getElementById('resultado').innerHTML = `
+                  <p>Rua: ${data.logradouro}</p>
+                  <p>Bairro: ${data.bairro}</p>
+                  <p>Cidade: ${data.localidade}</p>
+                  <p>Estado: ${data.uf}</p>
+              `
+      }
+    })
+    .catch(error => {
+      document.getElementById('resultado').innerHTML = 'Erro ao buscar o CEP.'
+      console.error('Erro:', error)
+    })
+}
