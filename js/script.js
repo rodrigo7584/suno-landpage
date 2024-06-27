@@ -227,19 +227,20 @@ $(document).ready(function () {
 
 var swiper = new Swiper('.tables', {
   slidesPerView: 1,
-  spaceBetween: 40,
+
+  pagination: {
+    el: '.tables .swiper-pagination',
+    clickable: true
+  },
   breakpoints: {
     640: {
-      slidesPerView: 2,
-      spaceBetween: 40
+      slidesPerView: 2
     },
     992: {
-      slidesPerView: 3,
-      spaceBetween: 40
+      slidesPerView: 3
     },
     1200: {
-      slidesPerView: 4,
-      spaceBetween: 50
+      slidesPerView: 4
     }
   }
 })

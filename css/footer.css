@@ -5,6 +5,7 @@
 .footer .title {
   font-size: 1.6rem;
   font-weight: 600;
+  color: var(--black);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
@@ -31,9 +32,14 @@
 .footer .content-row .box .icon {
   width: 100%;
   filter: var(--purple-svg);
+  margin-top: -1rem;
 }
 .footer .content-row .box-social {
   width: 25em;
+}
+.footer .content-row .box-social .social-icons {
+  display: flex;
+  gap: 1rem;
 }
 .footer .content-row .box-social .icon {
   width: 2.5rem;

@@ -28,7 +28,7 @@
   filter: var(--white-svg);
 }
 .btns-floating .btn.btn-whatsapp {
-  background: #01a001;
+  background: var(--green);
 }
 .btns-floating .btn.btn-cellphone {
   background: var(--purple);

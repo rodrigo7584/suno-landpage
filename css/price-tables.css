@@ -4,9 +4,42 @@
 .price-tables .table {
   color: var(--white);
   width: 30rem;
-  padding: 5rem 2.4em 2.4rem 2.4rem;
+  height: 55rem;
+  padding: 2.4rem;
   background-color: var(--purple);
   border-radius: 1rem;
+  margin: 0 2rem 0 2rem;
+}
+.price-tables .tag {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--gray);
+  height: 4rem;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+.price-tables .tag::before {
+  content: '';
+  position: absolute;
+  width: 47px;
+  height: 54px;
+  left: -45px;
+  top: 0;
+  background: url('../img/detail.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 4;
+}
+.price-tables .tag img {
+  width: 2.5rem;
+  position: relative;
+  z-index: 5;
+}
+.price-tables .tag span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--purple);
 }
 .price-tables .table .subtitle {
   font-size: 1.2rem;
@@ -16,7 +49,7 @@
 .price-tables .table .speed {
   font-size: 2.5rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 .price-tables .table .price {
   font-size: 3rem;
@@ -33,7 +66,7 @@
   display: block;
 }
 .price-tables .btns {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 .price-tables .btn {
   color: var(--purple);
@@ -60,12 +93,12 @@
 }
 .price-tables .btn-whatsapp {
   color: var(--white);
-  background-color: #01a001;
+  background-color: var(--green);
 }
 .price-tables .adicional-boxes {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 4rem;
   gap: 1rem;
 }
 .price-tables .adicional-box {
@@ -96,7 +129,7 @@
   background-size: 100% 100%;
 }
 .price-tables .adicional-box .btn-switch {
-  background: var(--gray-dark);
+  background-color: var(--gray-dark);
   height: 1.5rem;
   width: 4rem;
   padding: 0 0.3rem;
@@ -115,6 +148,9 @@
   border-radius: 100%;
   margin-left: 0;
   transition: 0.5s ease-in-out;
+}
+.price-tables .adicional-box .btn-switch.active {
+  background: var(--blue-light);
 }
 .price-tables .adicional-box .btn-switch.active .ball {
   cursor: pointer;

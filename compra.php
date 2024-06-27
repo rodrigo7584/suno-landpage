@@ -105,10 +105,15 @@
                   <input type="radio" id="tipo-pagamento-boleto" name="tipo-pagamento" value="boleto" required />
                   Boleto
                 </label>
-                <label for="tipo-pagamento-cartaodebito" class="tipo-pagamento-opcao" onclick="setActivePayType(this)">
-                  <input type="radio" id="tipo-pagamento-cartaodebito" name="tipo-pagamento" value="cartaodebito"
+                <label for="tipo-pagamento-cartaocredito" class="tipo-pagamento-opcao" onclick="setActivePayType(this)">
+                  <input type="radio" id="tipo-pagamento-cartaocredito" name="tipo-pagamento" value="cartaocredito"
                     required />
-                  Cartão Débito
+                  Cartão Crédito
+                </label>
+                <label for="tipo-pagamento-pix" class="tipo-pagamento-opcao" onclick="setActivePayType(this)">
+                  <input type="radio" id="tipo-pagamento-pix" name="tipo-pagamento" value="pix"
+                    required />
+                  PIX
                 </label>
               </div>
             </div>

@@ -4,7 +4,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="content">
-          <!-- <img src="./img/banner.png" alt=""> -->
           <img src="./img/logo-light.svg" alt="" class="logo">
           <h1>Sua internet <br> <strong>DEFINITIVA!</strong></h1>
           <div class="hero-price-container">
@@ -30,6 +29,9 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="table table-1">
+                <div class="tag">
+                  <img src="./img/emoji-dollar.svg" alt=""><span>PROMOÇÃO</span>
+                </div>
                 <h2 class="subtitle">Internet fibra com Wi-Fi 5</h2>
                 <h3 class="speed">400 Mega</h3>
                 <div class="box-price">
@@ -79,8 +81,7 @@
                     CONTRATAR ONLINE
                     <img src="./img/icon-arrow.svg" alt="" />
                   </button>
-                  <a href="https://api.whatsapp.com/send?phone=558007655520&text=Oi,%20vim%20pelo%20site%20da%20Suno" 
-    target="_blank" class="btn btn-whatsapp">
+                  <a href="https://api.whatsapp.com/send?phone=558007655520&text=Oi,%20vim%20pelo%20site%20da%20Suno"  target="_blank" class="btn btn-whatsapp">
                     CONTRATAR WHATSAPP
                     <img src="./img/icon-arrow.svg" alt="" />
                   </a>
@@ -89,6 +90,9 @@
             </div>
             <div class="swiper-slide">
               <div class="table table-3">
+                <div class="tag">
+                  <img src="./img/emoji-stars.svg" alt=""><span>MAIS VENDIDO</span>
+                </div>
                 <h2 class="subtitle">Internet fibra com Wi-Fi 5</h2>
                 <h3 class="speed" data-speed="1 Giga">1 Giga</h3>
                 <div class="box-price">
@@ -116,8 +120,7 @@
                     CONTRATAR ONLINE
                     <img src="./img/icon-arrow.svg" alt="" />
                   </button>
-                  <a href="https://api.whatsapp.com/send?phone=558007655520&text=Oi,%20vim%20pelo%20site%20da%20Suno" 
-    target="_blank" class="btn btn-whatsapp">
+                  <a href="https://api.whatsapp.com/send?phone=558007655520&text=Oi,%20vim%20pelo%20site%20da%20Suno" target="_blank" class="btn btn-whatsapp">
                     CONTRATAR WHATSAPP
                     <img src="./img/icon-arrow.svg" alt="" />
                   </a>
@@ -133,8 +136,7 @@
                   Fale com nossos especialistas
                 </span>
                 <div class="btns">
-                  <a href="https://api.whatsapp.com/send?phone=558007655520&text=Oi,%20vim%20pelo%20site%20da%20Suno" 
-    target="_blank" class="btn btn-whatsapp">
+                  <a href="https://api.whatsapp.com/send?phone=558007655520&text=Oi,%20vim%20pelo%20site%20da%20Suno" target="_blank" class="btn btn-whatsapp">
                     CONTRATAR WHATSAPP
                     <img src="./img/icon-arrow.svg" alt="" />
                   </a>
@@ -142,6 +144,7 @@
               </div>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </div>
