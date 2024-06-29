@@ -39,39 +39,66 @@
             <input type="hidden" name="_subject" value="New submission!" />
             <input type="hidden" name="preco" class="preco" value="" />
             <input type="hidden" name="velocidade" class="velocidade" value="" />
+            <input type="hidden" name="cep" class="cep" value="" />
+            <input type="hidden" name="rua" class="rua" value="" />
+            <input type="hidden" name="bairro" class="bairro" value="" />
+            <input type="hidden" name="cidade" class="cidade" value="" />
+            <input type="hidden" name="uf" class="uf" value="" />
             <input type="hidden" name="_captcha" value="false" />
-            <div class="step instalacao active">
+            <div class="step step-instalacao active">
               <h2>Onde será feita a instalação?</h2>
-              <div class="box-steps">
-                <input type="text" id="cep">
-                <button onclick="buscarEndereco()" class="btn btn-buscar">Buscar</button>
-                <label for="complemento">Complemento:</label>
-                <input type="text" id="complemento" name="complemento" />
-                <ul class='resultadoBuscaCep'></ul>
-
-              </div>
+              <input type="text" id="cep" class="input-rounded" required>
+              <button onclick="buscarEndereco()" class="btn btn-busca-cep">Buscar</button>
+              <ul class='resultadoBuscaCep'></ul>
             </div>
 
-            <div class="step">
-              <h2>Seus dados para cadastro:</h2>
-              <div class="box-steps">
-                <label for="nome">Nome completo:</label>
-                <input type="text" id="nome" name="nome" required />
-                <label for="telefone">Telefone:</label>
-                <input type="text" id="telefone" name="telefone" required />
-                <label for="email">E-mail:</label>
-                <input type="text" id="email" name="email" required />
-                <label for="data-nascimento">Data de Nascimento:</label>
-                <input type="text" id="nascimento" name="nascimento" required />
-                <label for="nome-mae">Nome da mãe:</label>
-                <input type="text" id="nome-mae" name="nome-mae" required />
-                <label for="cpf-cnpj">CPF ou CNPJ:</label>
-                <input type="text" id="cpf-cnpj" name="cpf-cnpj" required />
-              </div>
+            <div class="step step-instalacao">
+              <h2>Qual é o número e o complemento da sua residência?</h2>
+              <label for="numero">Número da casa/prédio:</label>
+              <input type="text" id="numero" class="input-rounded" name="numero" required />
+              <label for="complemento">Complemento:</label>
+              <input type="text" id="complemento" class="input-rounded" name="complemento" />
             </div>
 
-            <div class="step">
-              <h2>Como prefere fazer o pagamento?</h2>
+            <div class="step step-pessoal">
+              <h2>Qual seu nome ?</h2>
+              <label for="nome">Nome completo:</label>
+              <input type="text" id="nome" class="input-rounded" name="nome" required />
+            </div>
+
+            <div class="step step-pessoal">
+              <h2>Qual seu telefone ?</h2>
+              <label for="telefone">Telefone:</label>
+              <input type="text" id="telefone" class="input-rounded" name="telefone" required />
+            </div>
+
+            <div class="step step-pessoal">
+              <h2>Qual seu melhor E-mail ?</h2>
+              <label for="email">E-mail:</label>
+              <input type="text" id="email" class="input-rounded" name="email" required />
+            </div>
+
+            <div class="step step-pessoal">
+              <h2>Qual sua data de nascimento ?</h2>
+              <label for="data-nascimento">Data de Nascimento:</label>
+              <input type="text" id="nascimento" class="input-rounded" name="nascimento" required />
+            </div>
+
+            <div class="step step-pessoal">
+              <h2>Qual nome da sua mãe ?</h2>
+              <label for="nome-mae">Nome da mãe:</label>
+              <input type="text" id="nome-mae" class="input-rounded" name="nome-mae" required />
+            </div>
+
+            <div class="step step-pessoal">
+              <h2>Digite um documento ?</h2>
+              <label for="cpf-cnpj">CPF ou CNPJ:</label>
+              <input type="text" id="cpf-cnpj" class="input-rounded" name="cpf-cnpj" required />
+            </div>
+
+
+            <div class="step step-pagemento">
+              <h2>Qual melhor dia para o vencimento?</h2>
               <p class="label">Dia do Vencimento:</p>
               <div class="vencimento-opcoes">
                 <label for="vencimento-01" class="vencimento-opcao active" onclick="setActivePayday(this)">
@@ -95,6 +122,10 @@
                   15
                 </label>
               </div>
+            </div>
+
+            <div class="step step-pagemento">
+              <h2>Como prefere fazer o pagamento?</h2>
               <p class="label">Forma de Pagamento:</p>
               <div class="tipo-pagamento-opcoes">
                 <label for="tipo-pagamento-boleto" class="tipo-pagamento-opcao active" onclick="setActivePayType(this)">
@@ -111,6 +142,11 @@
                   PIX
                 </label>
               </div>
+            </div>
+
+            <div class="step">
+              <h2>Quais melhores periodos para instalação?</h2>
+              <ul id="dates" class="dates"></ul>
             </div>
 
             <div class="step">

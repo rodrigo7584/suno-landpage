@@ -13,7 +13,7 @@
         <div class="box-content">
           <a href="#" class="title">Regulamentos e contratos</a>
         </div>
-      </div> 
+      </div>
       <!-- <div class="box">
         <img src="./img/icon-doc.svg" alt="" class="icon" />
         <div class="box-content">
@@ -56,7 +56,10 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.9/dist/jquery.inputmask.min.js"></script>
 <script src="./js/script.js"></script>
+<script src="./js/form.js"></script>
+<script src="./js/slide.js"></script>
 <script src="./js/email.js"></script>
+<script src="./js/timeSchedule.js"></script>
 </body>
 
 </html>
