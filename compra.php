@@ -47,7 +47,7 @@
             <input type="hidden" name="_captcha" value="false" />
             <div class="step step-instalacao active">
               <h2>Onde será feita a instalação?</h2>
-              <input type="text" id="cep" class="input-rounded" required>
+              <input type="text" id="cep" class="input-rounded" data-input-type="cep" required>
               <button onclick="buscarEndereco()" class="btn btn-busca-cep">Buscar</button>
               <ul class='resultadoBuscaCep'></ul>
             </div>
@@ -63,13 +63,14 @@
             <div class="step step-pessoal">
               <h2>Qual seu nome ?</h2>
               <label for="nome">Nome completo:</label>
-              <input type="text" id="nome" class="input-rounded" name="nome" required />
+              <input type="text" id="nome" class="input-rounded" name="nome" data-input-type="name" required />
             </div>
 
             <div class="step step-pessoal">
               <h2>Qual seu telefone ?</h2>
               <label for="telefone">Telefone:</label>
-              <input type="text" id="telefone" class="input-rounded" name="telefone" required />
+              <input type="text" id="telefone" class="input-rounded" name="telefone" data-input-type="cellphone"
+                maxlength="15" required />
             </div>
 
             <div class="step step-pessoal">
@@ -87,7 +88,7 @@
             <div class="step step-pessoal">
               <h2>Qual nome da sua mãe ?</h2>
               <label for="nome-mae">Nome da mãe:</label>
-              <input type="text" id="nome-mae" class="input-rounded" name="nome-mae" required />
+              <input type="text" id="nome-mae" class="input-rounded" name="nome-mae" data-input-type="name" required />
             </div>
 
             <div class="step step-pessoal">

@@ -35,23 +35,6 @@ function nextPrev(n) {
   showStep(currentStep)
 }
 
-function validateForm() {
-  const steps = document.getElementsByClassName('step')
-  const inputs = steps[currentStep].querySelectorAll('input[required]')
-  let valid = true
-
-  inputs.forEach(input => {
-    if (input.value.trim() === '') {
-      input.classList.add('invalid')
-      valid = false
-    } else {
-      input.classList.remove('invalid')
-    }
-  })
-
-  return valid
-}
-
 function setActivePayday(label) {
   const allLabels = document.querySelectorAll('.vencimento-opcao')
   allLabels.forEach(lbl => lbl.classList.remove('active'))
@@ -61,6 +44,39 @@ function setActivePayType(label) {
   const allLabels = document.querySelectorAll('.tipo-pagamento-opcao')
   allLabels.forEach(lbl => lbl.classList.remove('active'))
   label.classList.add('active')
+}
+
+function buscarEndereco() {
+  const cep = document.getElementById('cep').value.replace(/\D/g, '')
+  const url = `https://viacep.com.br/ws/${cep}/json/`
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      if (data.erro) {
+        document.querySelector('.resultadoBuscaCep').innerHTML =
+          '<li><span>CEP não encontrado.</span></li>'
+      } else {
+        document.querySelector('#multiStepForm .cep').value = data.cep
+        document.querySelector('#multiStepForm .rua').value = data.logradouro
+        document.querySelector('#multiStepForm .bairro').value = data.bairro
+        document.querySelector('#multiStepForm .cidade').value = data.localidade
+        document.querySelector('#multiStepForm .uf').value = data.uf
+
+        document.querySelector('.resultadoBuscaCep').innerHTML = `
+                  <li><span>CEP:</span> ${data.cep}</li>
+                  <li><span>Rua:</span> ${data.logradouro}</li>
+                  <li><span>Bairro:</span> ${data.bairro}</li>
+                  <li><span>Cidade:</span> ${data.localidade}</li>
+                  <li><span>Estado:</span> ${data.uf}</li>
+              `
+      }
+    })
+    .catch(error => {
+      document.querySelector('.resultadoBuscaCep').innerHTML =
+        '<li><span>Erro ao buscar o cep</span></li>'
+      console.error('Erro:', error)
+    })
 }
 
 function showData() {
@@ -98,46 +114,25 @@ function showData() {
   }
 }
 
-$(document).ready(function () {
-  $('#numero').inputmask({ mask: '9[9][9][9]', greedy: false })
-  $('#telefone').inputmask('(99)99999-9999')
-  $('#nascimento').inputmask('99/99/9999')
-  $('#cep').inputmask('99999-999')
-  $('#cpf-cnpj').inputmask({
-    mask: ['999.999.999-99', '99.999.999-9999/99'],
-    keepStatic: true
+function validateForm() {
+  const steps = document.getElementsByClassName('step')
+  const inputs = steps[currentStep].querySelectorAll('input[required], input[data-input-type]')
+  let valid = true
+
+  inputs.forEach(input => {
+    if (input.hasAttribute('required') && input.value.trim() === '') {
+      input.classList.add('invalid')
+      valid = false
+    } else if (
+      input.getAttribute('data-input-type') &&
+      input.getAttribute('data-valid') !== 'true'
+    ) {
+      input.classList.add('invalid')
+      valid = false
+    } else {
+      input.classList.remove('invalid')
+    }
   })
-})
 
-function buscarEndereco() {
-  const cep = document.getElementById('cep').value.replace(/\D/g, '')
-  const url = `https://viacep.com.br/ws/${cep}/json/`
-
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      if (data.erro) {
-        document.querySelector('.resultadoBuscaCep').innerHTML =
-          '<li><span>CEP não encontrado.</span></li>'
-      } else {
-        document.querySelector('#multiStepForm .cep').value = data.cep
-        document.querySelector('#multiStepForm .rua').value = data.logradouro
-        document.querySelector('#multiStepForm .bairro').value = data.bairro
-        document.querySelector('#multiStepForm .cidade').value = data.localidade
-        document.querySelector('#multiStepForm .uf').value = data.uf
-
-        document.querySelector('.resultadoBuscaCep').innerHTML = `
-                  <li><span>CEP:</span> ${data.cep}</li>
-                  <li><span>Rua:</span> ${data.logradouro}</li>
-                  <li><span>Bairro:</span> ${data.bairro}</li>
-                  <li><span>Cidade:</span> ${data.localidade}</li>
-                  <li><span>Estado:</span> ${data.uf}</li>
-              `
-      }
-    })
-    .catch(error => {
-      document.querySelector('.resultadoBuscaCep').innerHTML =
-        '<li><span>Erro ao buscar o cep</span></li>'
-      console.error('Erro:', error)
-    })
+  return valid
 }

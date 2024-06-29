@@ -61,7 +61,7 @@ function createRadioGroupHTML(date, count) {
     radioGroupHTML += `
                     <div class="date-radio-group">
                       <div class="date-radio-option">
-                        <input type="radio" name="${date}tarde" value="${date} Tarde (12h às 18h)" checked>
+                        <input type="radio" name="instalacao-${date}tarde" value="${date} Tarde (12h às 18h)" checked>
                         <label for="${date}tarde">Tarde (12h às 18h)</label>
                       </div>
                     </div>`
@@ -69,11 +69,11 @@ function createRadioGroupHTML(date, count) {
     radioGroupHTML += `
                     <div class="date-radio-group">
                       <div class="date-radio-option">
-                        <input type="radio" name="${date}" value="${date} Manhã (08h às 18h)" id="${date}manha" checked>
+                        <input type="radio" name="instalacao-${date}" value="${date} Manhã (08h às 18h)" id="${date}manha" checked>
                         <label for="${date}manha">Manhã (08h às 12h)</label>
                       </div>
                       <div class="date-radio-option">
-                        <input type="radio" name="${date}" value="${date} Tarde (12h às 18h)" id="${date}tarde">
+                        <input type="radio" name="instalacao-${date}" value="${date} Tarde (12h às 18h)" id="${date}tarde">
                         <label for="${date}tarde">Tarde (12h às 18h)</label>
                       </div>
                     </div>`
