@@ -25,14 +25,29 @@ function showStep(n) {
 
 function nextPrev(n) {
   const steps = document.getElementsByClassName('step')
+  if (currentStep === 0 && validateCep()) return false
   if (n == 1 && !validateForm()) return false
   steps[currentStep].classList.remove('active')
   currentStep += n
-  if (currentStep >= steps.length) {
-    document.getElementById('multiStepForm').submit()
+
+  // if (currentStep >= steps.length) {
+  //   document.getElementById('multiStepForm').submit()
+  //   return false
+  // }
+  showStep(currentStep)
+}
+
+function validateCep() {
+  const btnSearchCep = document.querySelector('.btn-busca-cep')
+  const hiddenCep = document.querySelector('input[type="hidden"].cep')
+  console.log(!hiddenCep.value.length)
+  if (hiddenCep.value.length < 3) {
+    btnSearchCep.classList.add('invalid')
+    return true
+  } else {
+    btnSearchCep.classList.remove('invalid')
     return false
   }
-  showStep(currentStep)
 }
 
 function setActivePayday(label) {

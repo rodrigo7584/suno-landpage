@@ -44,6 +44,9 @@
 @media (max-width: 400px) {
 }
 */
+button.invalid {
+  border: 2px solid red !important;
+}
 input.invalid {
   border: 2px solid red !important;
 }

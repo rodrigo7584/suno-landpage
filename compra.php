@@ -55,7 +55,7 @@
             <div class="step step-instalacao">
               <h2>Qual é o número e o complemento da sua residência?</h2>
               <label for="numero">Número da casa/prédio:</label>
-              <input type="text" id="numero" class="input-rounded" name="numero" required />
+              <input type="text" id="numero" class="input-rounded" name="numero" data-input-type="houseNumber" maxlength="4" required/>
               <label for="complemento">Complemento:</label>
               <input type="text" id="complemento" class="input-rounded" name="complemento" />
             </div>
@@ -76,13 +76,13 @@
             <div class="step step-pessoal">
               <h2>Qual seu melhor E-mail ?</h2>
               <label for="email">E-mail:</label>
-              <input type="text" id="email" class="input-rounded" name="email" required />
+              <input type="text" id="email" class="input-rounded" name="email" data-input-type="email" required />
             </div>
 
             <div class="step step-pessoal">
               <h2>Qual sua data de nascimento ?</h2>
               <label for="data-nascimento">Data de Nascimento:</label>
-              <input type="text" id="nascimento" class="input-rounded" name="nascimento" required />
+              <input type="text" id="nascimento" class="input-rounded" name="nascimento" data-input-type="date" maxlength="10" required />
             </div>
 
             <div class="step step-pessoal">
@@ -94,7 +94,7 @@
             <div class="step step-pessoal">
               <h2>Digite um documento ?</h2>
               <label for="cpf-cnpj">CPF ou CNPJ:</label>
-              <input type="text" id="cpf-cnpj" class="input-rounded" name="cpf-cnpj" required />
+              <input type="text" id="cpf-cnpj" class="input-rounded" name="cpf-cnpj"data-input-type="cpf-cnpj" maxlength="18" required />
             </div>
 
 
