@@ -5,149 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulário Multi-step com CEP</title>
     <style>
-      .invalid {
-        border: 1px solid red;
+      .conteudo {
+        height: 0px;
+        opacity: 0;
+        transition: 1s;
+        background: red;
+        overflow: hidden;
+      }
+      .titulo {
+        position: relative;
+        z-index: 5;
+      }
+      .acordeon.active .conteudo {
+        opacity: 1;
+      }
+      .acordeon .conteudo {
+        position: relative;
+        z-index: 1;
+      }
+      .acordeon {
+        margin-bottom: 15px;
       }
     </style>
   </head>
   <body>
-    <form id="multiStepForm" class="form" method="POST">
-      <div class="step step-instalacao active">
-        <h2>Onde será feita a instalação?</h2>
-        <input
-          type="text"
-          id="cep"
-          class="input-rounded"
-          data-input-type="cep"
-          data-valid="false"
-          required
-        />
-        <button type="button" onclick="buscarEndereco()" class="btn btn-busca-cep">Buscar</button>
-        <ul class="resultadoBuscaCep"></ul>
+    <div class="acordeon">
+      <div class="titulo">titulo</div>
+      <div class="conteudo">conetudo</div>
+    </div>
+    <div class="acordeon">
+      <div class="titulo">titulo</div>
+      <div class="conteudo">
+        conetudo<br />
+        conetudo <br />
+        conetudo <br />
+        conetudo <br />
+        conetudo <br />
+        conetudo<br />
+        conetudo
       </div>
-      <div class="btns">
-        <button type="button" class="btn-back" id="prevBtn" onclick="nextPrev(-1)">Voltar</button>
-        <button type="button" class="btn-next" id="nextBtn" onclick="nextPrev(1)">Continuar</button>
+    </div>
+    <div class="acordeon">
+      <div class="titulo">titulo</div>
+      <div class="conteudo">
+        conetudo <br />
+        conetudo <br />
+        conetudo
       </div>
-    </form>
+    </div>
 
     <script>
-      let currentStep = 0
+      document.addEventListener('DOMContentLoaded', function () {
+        const acordeons = document.querySelectorAll('.acordeon')
 
-      function initInputCep() {
-        const inputCep = document.querySelectorAll('input[data-input-type="cep"]')
-
-        if (inputCep.length > 0) {
-          inputCep.forEach(input => {
-            input.addEventListener('input', function (event) {
-              const input = event.target
-              let valor = input.value.replace(/\D/g, '') // Remove caracteres não numéricos
-
-              let formattedValue = ''
-
-              if (valor.length > 0) {
-                formattedValue += valor.substring(0, 5)
-              }
-              if (valor.length > 5) {
-                formattedValue += '-' + valor.substring(5, 8)
-              }
-
-              input.value = formattedValue
-
-              if (input.value.length === 9) {
-                input.classList.remove('invalid')
-                input.setAttribute('data-valid', 'true')
-              } else {
-                input.classList.add('invalid')
-                input.setAttribute('data-valid', 'false')
-              }
-            })
-          })
-        }
-      }
-
-      function buscarEndereco() {
-        const cepInput = document.getElementById('cep')
-        const cep = cepInput.value.replace(/\D/g, '')
-        const url = `https://viacep.com.br/ws/${cep}/json/`
-
-        fetch(url)
-          .then(response => response.json())
-          .then(data => {
-            if (data.erro) {
-              document.querySelector('.resultadoBuscaCep').innerHTML =
-                '<li><span>CEP não encontrado.</span></li>'
-              cepInput.setAttribute('data-valid', 'false')
+        acordeons.forEach(item => {
+          const titulo = item.querySelector('.titulo')
+          console.log(titulo)
+          titulo.addEventListener('click', () => {
+            if (item.classList.contains('active')) {
+              titulo.nextElementSibling.style.height = '0px'
+              item.classList.remove('active')
             } else {
-              document.querySelector('#multiStepForm .cep').value = data.cep
-              document.querySelector('#multiStepForm .rua').value = data.logradouro
-              document.querySelector('#multiStepForm .bairro').value = data.bairro
-              document.querySelector('#multiStepForm .cidade').value = data.localidade
-              document.querySelector('#multiStepForm .uf').value = data.uf
-
-              document.querySelector('.resultadoBuscaCep').innerHTML = `
-                          <li><span>CEP:</span> ${data.cep}</li>
-                          <li><span>Rua:</span> ${data.logradouro}</li>
-                          <li><span>Bairro:</span> ${data.bairro}</li>
-                          <li><span>Cidade:</span> ${data.localidade}</li>
-                          <li><span>Estado:</span> ${data.uf}</li>
-                      `
-              cepInput.setAttribute('data-valid', 'true')
+              item.classList.add('active')
+              console.log('scrollHeight:', titulo.nextElementSibling.scrollHeight)
+              titulo.nextElementSibling.style.height = `${titulo.nextElementSibling.scrollHeight}px`
             }
           })
-          .catch(error => {
-            document.querySelector('.resultadoBuscaCep').innerHTML =
-              '<li><span>Erro ao buscar o cep</span></li>'
-            console.error('Erro:', error)
-            cepInput.setAttribute('data-valid', 'false')
-          })
-      }
-
-      function validateForm() {
-        const steps = document.getElementsByClassName('step')
-        const inputs = steps[currentStep].querySelectorAll(
-          'input[required], input[data-input-type]'
-        )
-        let valid = true
-
-        inputs.forEach(input => {
-          if (input.hasAttribute('required') && input.value.trim() === '') {
-            input.classList.add('invalid')
-            valid = false
-          } else if (
-            input.getAttribute('data-input-type') &&
-            input.getAttribute('data-valid') !== 'true'
-          ) {
-            input.classList.add('invalid')
-            valid = false
-          } else {
-            input.classList.remove('invalid')
-          }
         })
-
-        return valid
-      }
-
-      function nextPrev(n) {
-        const steps = document.getElementsByClassName('step')
-        if (n == 1 && !validateForm()) return false
-        steps[currentStep].classList.remove('active')
-        currentStep += n
-        if (currentStep >= steps.length) {
-          document.getElementById('multiStepForm').submit()
-          return false
-        }
-        showStep(currentStep)
-      }
-
-      function showStep(step) {
-        const steps = document.getElementsByClassName('step')
-        steps[step].classList.add('active')
-      }
-
-      document.addEventListener('DOMContentLoaded', function () {
-        initInputCep()
-        showStep(currentStep)
       })
     </script>
   </body>

@@ -34,6 +34,9 @@ function sendData(table) {
   const chosenTable = document.querySelector(`.${table}`)
 
   const speed = chosenTable.querySelector('.speed').innerText
+
+  localStorage.setItem('velocidade', speed)
+
   const price = chosenTable.querySelector('.price').innerText
   let time = chosenTable.querySelector('.time')
   let adicional = chosenTable.querySelector('.btn-switch.active')
