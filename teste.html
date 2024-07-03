@@ -4,36 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulário Multi-step com CEP</title>
-    <style>
-      .conteudo {
-        height: 0px;
-        opacity: 0;
-        transition: 1s;
-        background: red;
-        overflow: hidden;
-      }
-      .titulo {
-        position: relative;
-        z-index: 5;
-      }
-      .acordeon.active .conteudo {
-        opacity: 1;
-      }
-      .acordeon .conteudo {
-        position: relative;
-        z-index: 1;
-      }
-      .acordeon {
-        margin-bottom: 15px;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <div class="acordeon">
-      <div class="titulo">titulo</div>
-      <div class="conteudo">conetudo</div>
+    <div class="accordion">
+      <div class="title">titulo</div>
+      <div class="content">conetudo</div>
     </div>
-    <div class="acordeon">
+    <div class="accordion">
       <div class="titulo">titulo</div>
       <div class="conteudo">
         conetudo<br />
@@ -45,7 +23,7 @@
         conetudo
       </div>
     </div>
-    <div class="acordeon">
+    <div class="accordion">
       <div class="titulo">titulo</div>
       <div class="conteudo">
         conetudo <br />
@@ -54,25 +32,6 @@
       </div>
     </div>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const acordeons = document.querySelectorAll('.acordeon')
-
-        acordeons.forEach(item => {
-          const titulo = item.querySelector('.titulo')
-          console.log(titulo)
-          titulo.addEventListener('click', () => {
-            if (item.classList.contains('active')) {
-              titulo.nextElementSibling.style.height = '0px'
-              item.classList.remove('active')
-            } else {
-              item.classList.add('active')
-              console.log('scrollHeight:', titulo.nextElementSibling.scrollHeight)
-              titulo.nextElementSibling.style.height = `${titulo.nextElementSibling.scrollHeight}px`
-            }
-          })
-        })
-      })
-    </script>
+    <script></script>
   </body>
 </html>

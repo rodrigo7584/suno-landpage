@@ -187,6 +187,28 @@
 .compra .dates .date-radio-option label {
   margin-bottom: 0;
 }
+.compra .checkbox-box {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.compra .checkbox-box input {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.compra .checkbox-box input:hover {
+  cursor: pointer;
+}
+.compra .checkbox-box .checkbox-content {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.compra .checkbox-box .checkbox-content a {
+  display: inline;
+  color: var(--purple);
+}
 .compra .label-message {
   margin-bottom: 1.5rem;
   display: block;

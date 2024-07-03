@@ -149,5 +149,134 @@
       </div>
     </div>
   </section>
+
+  <section class="faq">
+    <div class="container">
+      <div class="row">
+        <h2 class="title">Tire suas dúvidas sobre a Suno Fibra</h2>
+        <div class="box-faq">
+          <div class="accordion">
+            <div class="accordion-title">
+              <h3>1. O que é a Suno Fibra?</h3>
+              <img src="./img/icon-arrow-up.svg" alt="" class="icon">
+            </div>
+            <div class="accordion-content">
+              <p>
+                A Suno Fibra é um serviço de internet de alta velocidade que utiliza tecnologia de fibra óptica para oferecer conexões rápidas e estáveis para residências e empresas.
+              </p>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-title">
+              <h3>2. Quais são os benefícios da internet fibra óptica?</h3>
+              <img src="./img/icon-arrow-up.svg" alt="" class="icon">
+            </div>
+            <div class="accordion-content">
+              <p>
+              A internet via fibra óptica proporciona velocidades mais altas, menor latência, maior estabilidade e é menos sujeita a interferências, garantindo uma experiência de navegação mais fluida e confiável.              
+              </p>      
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-title">
+              <h3>3. Como posso assinar a Suno Fibra?</h3>
+              <img src="./img/icon-arrow-up.svg" alt="" class="icon">
+            </div>
+            <div class="accordion-content">
+              <p>
+              Você pode assinar a Suno Fibra diretamente pelo site oficial, através do atendimento telefônico ou visitando uma loja parceira da Suno Fibra. Verifique a cobertura do serviço na sua área antes de contratar.            
+              </p>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-title">
+              <h3>4. Quais são os planos de velocidade oferecidos pela Suno Fibra?</h3>
+              <img src="./img/icon-arrow-up.svg" alt="" class="icon">
+            </div>
+            <div class="accordion-content">
+              <p>
+              A Suno Fibra oferece diversos planos que se adaptam às diferentes necessidades dos usuários, desde planos básicos até opções com velocidades ultra-rápidas para atividades que demandam alto desempenho, como streaming e jogos online.
+              </p>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-title">
+              <h3>5. O que está incluso nos planos da Suno Fibra?</h3>
+              <img src="./img/icon-arrow-up.svg" alt="" class="icon">
+            </div>
+            <div class="accordion-content">
+              <p>
+              Os planos da Suno Fibra geralmente incluem a instalação do serviço, um roteador Wi-Fi, suporte técnico e a opção de adicionar serviços complementares, como telefonia fixa e TV por assinatura.             
+             </p>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-title">
+              <h3>6. Como é realizada a instalação da Suno Fibra?</h3>
+              <img src="./img/icon-arrow-up.svg" alt="" class="icon">
+            </div>
+            <div class="accordion-content">
+              <p>
+                A instalação é feita por técnicos qualificados que levam a fibra óptica até o seu local, instalam o roteador e verificam a qualidade da conexão para garantir que o serviço esteja funcionando corretamente.            
+              </p>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-title">
+              <h3>
+              7. Qual é o tempo estimado para a instalação após a contratação do serviço?
+              </h3>
+              <img src="./img/icon-arrow-up.svg" alt="" class="icon">
+            </div>
+            <div class="accordion-content">
+              <p>
+              O tempo de instalação pode variar dependendo da disponibilidade de técnicos e da demanda na sua região, mas geralmente é feito dentro de alguns dias úteis após a confirmação da contratação.
+              </p>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-title">
+              <h3>
+              8. Como posso verificar se a Suno Fibra está disponível na minha área?
+              </h3>
+              <img src="./img/icon-arrow-up.svg" alt="" class="icon">
+            </div>
+            <div class="accordion-content">
+              <p>
+                Você pode verificar a disponibilidade da Suno Fibra no site oficial da empresa, inserindo o seu endereço, ou entrando em contato com o serviço de atendimento ao cliente.
+              </p>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-title">
+              <h3>
+                9. Quais equipamentos são necessários para usar a Suno Fibra em casa?
+              </h3>
+              <img src="./img/icon-arrow-up.svg" alt="" class="icon">
+            </div>
+            <div class="accordion-content">
+              <p>
+                Para usar a Suno Fibra, você precisa de uma tomada elétrica próxima ao local de instalação do roteador e um dispositivo, como um computador ou smartphone, capaz de se conectar à rede Wi-Fi.
+              </p>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="accordion-title">
+              <h3>
+              10. Como funciona o suporte técnico da Suno Fibra?
+              </h3>
+              <img src="./img/icon-arrow-up.svg" alt="" class="icon">
+            </div>
+            <div class="accordion-content">
+              <p>
+              O suporte técnico da Suno Fibra está disponível 24 horas por dia, 7 dias por semana. Você pode entrar em contato pelo telefone, pelo site ou pelo aplicativo da Suno Fibra para solucionar qualquer problema ou dúvida que possa surgir.
+              </p>
+            </div>
+          </div>
+       
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 <?php include './footer.php'?>

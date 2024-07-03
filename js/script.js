@@ -114,3 +114,23 @@ function displayData() {
 if (window.location.pathname.endsWith('compra.php')) {
   window.onload = displayData
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const accordions = document.querySelectorAll('.accordion')
+  if (accordions.length > 0) {
+    accordions.forEach(item => {
+      const title = item.querySelector('.accordion-title')
+
+      title.addEventListener('click', () => {
+        if (item.classList.contains('active')) {
+          title.nextElementSibling.style.height = '0px'
+          item.classList.remove('active')
+        } else {
+          item.classList.add('active')
+          console.log('scrollHeight:', title.nextElementSibling.scrollHeight)
+          title.nextElementSibling.style.height = `${title.nextElementSibling.scrollHeight}px`
+        }
+      })
+    })
+  }
+})

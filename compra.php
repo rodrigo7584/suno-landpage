@@ -153,6 +153,14 @@
             <div class="step">
               <h2>Confirme seu Dados:</h2>
               <ul id="output"></ul>
+              <div class="checkbox-box">
+                <input type="checkbox" id="checkbox-agree" name="agreeBox" value="agree">
+                <p class="checkbox-content">
+                 Li e concordo com a fidelização e com o
+                 <a href="#"> Contrato de prestação de Serviços</a>, 
+                 <a href="#"> Regulamento da Oferta</a>. 
+                </p>
+              </div>
             </div>
             <span class="label-message"> </span>
             <div class="btns">
