@@ -168,9 +168,13 @@
   line-height: 1.2;
   margin-bottom: 0.5rem;
 }
-@media (max-width: 400px) {
-  .price-tables .table {
-    color: var(--white);
-    width: 26rem;
+@media (max-width: 768px) {
+  .price-tables .container {
+    max-width: 100%;
+    padding: 0;
+  }
+  .price-tables .swiper-slide {
+    display: flex;
+    width: 30rem !important;
   }
 }

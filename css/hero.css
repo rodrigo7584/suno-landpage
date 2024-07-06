@@ -32,7 +32,6 @@
   margin: 3rem 0;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   gap: 8rem;
 }
 .hero .content h2 {
@@ -72,7 +71,7 @@
 .hero .content .btn-compre {
   background-color: var(--white);
   display: flex;
-  align-self: flex-end;
+  align-self: flex-start;
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -106,6 +105,9 @@
     display: grid;
     grid-template-columns: 55% 1fr;
   }
+  .hero .content {
+    padding: 3rem;
+  }
 }
 @media (max-width: 768px) {
   .hero .row {
@@ -121,6 +123,7 @@
   .hero .row .content {
     padding: 4rem 2rem;
     background: linear-gradient(to bottom, #000049, #000080);
+    align-items: center;
   }
   .hero .content .btn-compre {
     align-self: center;
@@ -128,6 +131,9 @@
   .hero .image {
     height: 40rem;
   }
+  /* .hero .content {
+    padding: 3rem 3rem 3rem 3rem;
+  } */
   .hero .image::after {
     background: linear-gradient(to bottom, #000080 0%, #0000801c 60%);
   }

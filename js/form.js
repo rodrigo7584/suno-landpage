@@ -29,18 +29,13 @@ function nextPrev(n) {
   if (n == 1 && !validateForm()) return false
   steps[currentStep].classList.remove('active')
   currentStep += n
-
-  // if (currentStep >= steps.length) {
-  //   document.getElementById('multiStepForm').submit()
-  //   return false
-  // }
   showStep(currentStep)
+  setStep()
 }
 
 function validateCep() {
   const btnSearchCep = document.querySelector('.btn-busca-cep')
   const hiddenCep = document.querySelector('input[type="hidden"].cep')
-  console.log(!hiddenCep.value.length)
   if (hiddenCep.value.length < 3) {
     btnSearchCep.classList.add('invalid')
     return true
@@ -102,6 +97,7 @@ function showData() {
     { name: 'preco', displayName: 'Preço:' },
     { name: 'velocidade', displayName: 'Velocidade:' },
     { name: 'endereco', displayName: 'Endereço:' },
+    { name: 'rua', displayName: 'Rua:' },
     { name: 'bairro', displayName: 'Bairro:' },
     { name: 'cidade', displayName: 'Cidade:' },
     { name: 'numero', displayName: 'Número:' },
@@ -150,4 +146,17 @@ function validateForm() {
   })
 
   return valid
+}
+
+function setStep() {
+  const stepsList = document.querySelectorAll('.plan-steps li')
+  const stepsForm = document.querySelector('#multiStepForm .step.active').getAttribute('data-step')
+
+  stepsList.forEach(step => {
+    step.classList.remove('active')
+  })
+  const stepsListActive = document.querySelector(`.plan-steps li[data-step="${stepsForm}"]`)
+  console.log(stepsListActive)
+
+  stepsListActive.classList.add('active')
 }

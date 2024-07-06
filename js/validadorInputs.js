@@ -20,7 +20,7 @@ function initInputName() {
 function validateInputName(input) {
   const valor = input.value.trim()
   // Verifica se o valor do input corresponde ao padrão desejado
-  const regex = /^[a-zA-Z]{3,}\s[a-zA-Z]{3,}(?:\s[a-zA-Z]*)*$/
+  const regex = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}(?:\s[a-zA-Z]*)*$/
   if (!regex.test(valor)) {
     input.classList.add('invalid')
     input.setAttribute('data-valid', 'false')
@@ -55,7 +55,9 @@ function initInputCellphone() {
             '(' +
             valor.substring(0, 2) +
             ') ' +
-            valor.substring(2, 7) +
+            valor.substring(2, 3) +
+            ' ' +
+            valor.substring(3, 7) +
             '-' +
             valor.substring(7, 11)
         }

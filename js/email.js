@@ -6,8 +6,8 @@ function enviarEmail() {
   if (checkbox.checked) {
     const formData = new FormData(form)
 
-    labelMessage.innerHTML = 'Enviando e-mail...'
-    labelMessage.style.color = '#3c7ec1'
+    // labelMessage.innerHTML = 'Enviando e-mail...'
+    // labelMessage.style.color = '#3c7ec1'
 
     fetch('https://formsubmit.co/ajax/rodrigo.gandhi.oliveira@gmail.com', {
       method: 'POST',
