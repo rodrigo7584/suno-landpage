@@ -1,7 +1,7 @@
 var swiper = new Swiper('.tables', {
   slidesPerView: 'auto',
   centeredSlides: true,
-  spaceBetween: 30,
+  spaceBetween: 10,
   pagination: {
     el: '.tables .swiper-pagination',
     clickable: true
