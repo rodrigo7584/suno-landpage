@@ -156,7 +156,7 @@ function setStep() {
     step.classList.remove('active')
   })
   const stepsListActive = document.querySelector(`.plan-steps li[data-step="${stepsForm}"]`)
-  console.log(stepsListActive)
+  // console.log(stepsListActive)
 
   stepsListActive.classList.add('active')
 }

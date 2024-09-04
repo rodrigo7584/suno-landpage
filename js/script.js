@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
           item.classList.remove('active')
         } else {
           item.classList.add('active')
-          console.log('scrollHeight:', title.nextElementSibling.scrollHeight)
+          // console.log('scrollHeight:', title.nextElementSibling.scrollHeight)
           title.nextElementSibling.style.height = `${title.nextElementSibling.scrollHeight}px`
         }
       })
