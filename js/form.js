@@ -34,13 +34,13 @@ function nextPrev(n) {
 }
 
 function validateCep() {
-  const btnSearchCep = document.querySelector('.btn-busca-cep')
+  // const btnSearchCep = document.querySelector('.btn-busca-cep')
   const hiddenCep = document.querySelector('input[type="hidden"].cep')
   if (hiddenCep.value.length < 3) {
-    btnSearchCep.classList.add('invalid')
+    // btnSearchCep.classList.add('invalid')
     return true
   } else {
-    btnSearchCep.classList.remove('invalid')
+    // btnSearchCep.classList.remove('invalid')
     return false
   }
 }
@@ -54,6 +54,15 @@ function setActivePayType(label) {
   const allLabels = document.querySelectorAll('.tipo-pagamento-opcao')
   allLabels.forEach(lbl => lbl.classList.remove('active'))
   label.classList.add('active')
+}
+
+function buscarCepAutomaticamente() {
+  const cepInput = document.getElementById('cep')
+  const cep = cepInput.value.replace(/\D/g, '')
+
+  if (cep.length === 8) {
+    buscarEndereco() // Chama a função de busca quando o CEP tem 8 dígitos
+  }
 }
 
 function buscarEndereco() {

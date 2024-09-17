@@ -95,14 +95,15 @@
 .compra .form .resultadoBuscaCep span {
   font-weight: 700;
 }
-.compra .form .btn-busca-cep {
+/* .compra .form .btn-busca-cep {
   margin-top: 2rem;
   align-self: flex-start;
   margin-bottom: 2rem;
-}
+} */
 .compra .form .correios-link {
   font-size: 1.2rem;
   color: var(--blue);
+  margin-bottom: 1rem;
 }
 .compra .form label,
 .compra .form .label {

@@ -20,7 +20,9 @@ function initInputName() {
 function validateInputName(input) {
   const valor = input.value.trim()
   // Verifica se o valor do input corresponde ao padrão desejado
-  const regex = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}(?:\s[a-zA-Z]*)*$/
+  // const regex = /^[a-zA-Z]{2,}\s[a-zA-Z]{2,}(?:\s[a-zA-Z]*)*$/
+  const regex = /^[a-zA-ZÀ-ÖØ-öø-ÿ]{2,}\s[a-zA-ZÀ-ÖØ-öø-ÿ]{2,}(?:\s[a-zA-ZÀ-ÖØ-öø-ÿ]*)*$/
+
   if (!regex.test(valor)) {
     input.classList.add('invalid')
     input.setAttribute('data-valid', 'false')

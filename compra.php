@@ -48,10 +48,10 @@
             <div class="step active" data-step="instalacao">
               <h2>Onde será feita a instalação?</h2>
               <label for="cep">Informe seu CEP:</label>
-              <input type="text" id="cep" class="input-rounded" data-input-type="cep" required>
+              <input type="text" id="cep" class="input-rounded" data-input-type="cep"oninput="buscarCepAutomaticamente()" required>
               <a target="_blank" href="https://buscacepinter.correios.com.br/app/endereco/" class="correios-link">Não
                 sei o meu CEP</a>
-              <button onclick="buscarEndereco()" class="btn btn-busca-cep">Buscar</button>
+              <!-- <button onclick="buscarEndereco()" class="btn btn-busca-cep">Buscar</button> -->
               <ul class='resultadoBuscaCep'></ul>
             </div>
 
