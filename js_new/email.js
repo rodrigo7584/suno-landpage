@@ -9,7 +9,7 @@ function enviarEmail() {
     labelMessage.innerHTML = 'Enviando e-mail...'
     labelMessage.style.color = '#3c7ec1'
 
-    fetch('https://formsubmit.co/ajax/rodrigo.gandhi.oliveira@gmail.com', {
+    fetch('https://formsubmit.co/ajax/lead@sunotelecom.com.br', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
