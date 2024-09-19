@@ -9,7 +9,7 @@ function enviarEmail() {
     // labelMessage.innerHTML = 'Enviando e-mail...'
     // labelMessage.style.color = '#3c7ec1'
 
-    fetch('https://formsubmit.co/ajax/rodrigo.gandhi.oliveira@gmail.com', {
+    fetch('https://formsubmit.co/ajax/lead@sunotelecom.com.br', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -21,7 +21,7 @@ function enviarEmail() {
       .then(data => {
         if (data.success) {
           form.reset()
-          labelMessage.innerHTML = 'E-mail enviado com sucesso'
+          labelMessage.innerHTML = 'Obrigado por contratar a Suno telecom. <br> Em breve nossa equipe entrará em contato para finalizar seu pedido.'
           labelMessage.style.color = '#05b088'
           setTimeout(() => {
             window.location.href = 'index.php'
@@ -30,7 +30,7 @@ function enviarEmail() {
           labelMessage.innerHTML = 'Ocorreu um erro tente mais tarde'
           labelMessage.style.color = '#cf0000'
         }
-      })
+      })      
       .catch(error => {
         console.error(error)
         labelMessage.innerHTML = 'Ocorreu um erro contate um administrador'
